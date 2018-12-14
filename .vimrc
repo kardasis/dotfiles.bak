@@ -165,15 +165,6 @@ nnoremap <leader>tn :call OpenBufferInNewTab()<cr>
 " }}}
 
 " Filetype settings {{{
-" Javascript file settings {{{
-augroup javascriptFileTypeGroup
-  autocmd!
-  autocmd FileType javascript nnoremap <buffer> <leader>/ I//<space><esc>
-  autocmd FileType javascript setlocal foldmethod=syntax
-  autocmd FileType javascript setlocal foldlevel=3
-augroup END
-" }}}
-
 " Typescript file settings {{{
 augroup typescriptFileTypeGroup
   autocmd!
@@ -359,14 +350,6 @@ nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gd :Gvdiff<cr>
 nnoremap <leader>gps :Gpush<cr>
 nnoremap <leader>gpl :Gpull<cr>
-" }}}
-
-" Snippets {{{
-nnoremap <leader>cl oconsole.log()<esc>i
-nnoremap <leader>ce oconsole.error()<esc>i
-
-" take the word under the cursor and console log it as an object
-nnoremap <leader>cL :execute "normal! oconsole.log({ " . expand('<cword>') . " })"<cr>
 " }}}
 
 " Copy Paste {{{
