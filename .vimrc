@@ -231,6 +231,8 @@ nnoremap <leader>ss :Ggrep '<cword>' <cr>
 " }}}
 
 " File Navigation {{{
+" open filetype for current filetype
+nnoremap <leader>ef :vsplit ~/.vim/ftplugin/<C-R>=&filetype<CR>.vim<CR> 
 " open vimrc
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " open bash_profile
