@@ -25,6 +25,8 @@ Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-commentary'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-repeat'
+Plugin 'rafi/awesome-vim-colorschemes'
+Plugin 'vim-scripts/ScrollColors'
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
@@ -81,8 +83,12 @@ set wiw=115
 set hlsearch
 set incsearch
 syntax on
-colorscheme darkblue
+
+colorscheme meta5
 set background=dark
+highlight folded guifg=black guibg=#708200
+highlight iCursor guifg=white guibg=black
+
 " wildmenu
 set wildchar=<Tab> wildmenu wildmode=full
 nnoremap <leader>N :setlocal number! relativenumber!<cr>
