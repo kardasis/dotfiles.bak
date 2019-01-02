@@ -27,6 +27,7 @@ Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-repeat'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'vim-scripts/ScrollColors'
+Plugin 'junegunn/goyo.vim'
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
@@ -34,6 +35,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'HerringtonDarkholme/yats.vim'   " typescript
 Plugin 'tomlion/vim-solidity'
+
 call vundle#end()            " required
 
 " for vim-markdown-preview
@@ -84,10 +86,17 @@ set hlsearch
 set incsearch
 syntax on
 
-colorscheme meta5
+colorscheme molokayo
 set background=dark
-highlight folded guifg=black guibg=#708200
+highlight folded guifg=white guibg=#506200
 highlight iCursor guifg=white guibg=black
+highlight VertSplit guibg=darkgray guifg=darkgray
+highlight visual guibg=pink guifg=black 
+
+highlight statusline guibg=#5577dd guifg=white
+highlight statuslinenc guibg=#444444 guifg=#999999
+set guioptions-=r
+set guioptions-=l
 
 " wildmenu
 set wildchar=<Tab> wildmenu wildmode=full
@@ -171,10 +180,14 @@ nnoremap <leader>tn :call OpenBufferInNewTab()<cr>
 " }}}
 
 " Indentation {{{
- set expandtab
- set shiftwidth=2
- set autoindent
- set smartindent
+set expandtab
+set shiftwidth=2
+set autoindent
+set smartindent
+
+  " format json
+nnoremap <leader>jq :%!jq '.'<cr>
+vnoremap <leader>jq :!jq '.'<cr>
 " }}}
 
 " Easy Align {{{
