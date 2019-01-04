@@ -86,15 +86,8 @@ set hlsearch
 set incsearch
 syntax on
 
-colorscheme molokayo
-set background=dark
-highlight folded guifg=white guibg=#506200
-highlight iCursor guifg=white guibg=black
-highlight VertSplit guibg=darkgray guifg=darkgray
-highlight visual guibg=pink guifg=black 
+colorscheme ari-colorscheme
 
-highlight statusline guibg=#5577dd guifg=white
-highlight statuslinenc guibg=#444444 guifg=#999999
 set guioptions-=r
 set guioptions-=l
 
@@ -133,6 +126,7 @@ nnoremap K <PageUp>
 nnoremap <leader>co :copen<cr>
 nnoremap <leader>cj :cnext<cr>
 nnoremap <leader>ck :cprevious<cr>
+nnoremap H K
 
 onoremap H 0
 onoremap L $
@@ -235,7 +229,6 @@ nnoremap <leader>he :match Errors /\v\s+$/<cr>
 nnoremap <leader>hE :match none<cr>
 
 " set current line highlight in active window
-highlight cursorline ctermbg=green guibg=darkgreen
 augroup CursorLineOnlyInActiveWindow
   autocmd!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline

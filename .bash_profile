@@ -83,3 +83,5 @@ else
 fi
 unset __conda_setup
 # <<< conda init <<<
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
