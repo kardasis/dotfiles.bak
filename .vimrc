@@ -35,6 +35,8 @@ Plugin 'tpope/vim-markdown'
 Plugin 'pangloss/vim-javascript'
 Plugin 'HerringtonDarkholme/yats.vim'   " typescript
 Plugin 'tomlion/vim-solidity'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'hdima/python-syntax'
 
 call vundle#end()            " required
 
@@ -58,6 +60,7 @@ endfunction
 let g:ale_linters = {
 \   'javascript': ['standard'],
 \   'typescript': ['eslint', 'prettier'],
+\   'python': ['flake8'],
 \}
 let g:ale_fixers = {'javascript': ['standard']}
 let g:ale_lint_on_text_changed = 'never'
@@ -126,7 +129,7 @@ nnoremap K <PageUp>
 nnoremap <leader>co :copen<cr>
 nnoremap <leader>cj :cnext<cr>
 nnoremap <leader>ck :cprevious<cr>
-nnoremap H K
+nnoremap <leader>H K
 
 onoremap H 0
 onoremap L $
@@ -138,6 +141,9 @@ inoremap jk <esc>
 
 " copy the current file path and line number into the 'l' register
 nnoremap <leader>yy :let@l=join([expand('%'),  line(".")], ':')<cr>
+
+" adjust the behavior of backspace key in insert mode
+set backspace=2
 " }}}
 
 " Windows and Tabs {{{
@@ -279,3 +285,8 @@ nnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>v "+p
 " }}}
+
+" show info for the highligh group under the cursor
+map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
