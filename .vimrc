@@ -37,6 +37,7 @@ Plugin 'HerringtonDarkholme/yats.vim'   " typescript
 Plugin 'tomlion/vim-solidity'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'hdima/python-syntax'
+Plugin 'posva/vim-vue'
 
 call vundle#end()            " required
 
