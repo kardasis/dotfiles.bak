@@ -85,6 +85,9 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -109,8 +112,7 @@ export SSH_KEY_PATH="~/.ssh/rsa_id"
 #
 #
 export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
+export LSCOLORS=Cxfxcxdxbxegedabagacad
 HISTFILESIZE=1000000000 HISTSIZE=1000000
 
 cd_to_git_root()
@@ -154,3 +156,6 @@ alias rm=trash
 
 eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
