@@ -154,8 +154,5 @@ alias sb='source ~/.bash_profile'
 alias dcodb='dco down && dco build'
 alias rm=trash
 
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/bin:$PATH"
-
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
