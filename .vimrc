@@ -260,8 +260,8 @@ nnoremap <leader>eb :vsplit ~/.bash_profile<cr>
 nnoremap <leader>ez :vsplit ~/.zshrc<cr>
 " open my personal vim todo list 
 nnoremap <leader>ea :vsplit ~/vim.annoyance<cr>
-" fzf file searches
 nnoremap <leader>en :vsplit notes.ariignore<cr>
+" fzf file searches
 nnoremap <leader>eg :GFiles<cr>
 nnoremap <leader>et :NERDTree<cr>
 " }}}
