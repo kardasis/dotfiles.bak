@@ -153,7 +153,7 @@ alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias sb='source ~/.bash_profile'
 alias dcodb='dco down && dco build'
 alias rm=trash
-
+alias hm='hivemind -p 3000 Procfile.dev'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 

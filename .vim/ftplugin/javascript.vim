@@ -1,6 +1,6 @@
 nnoremap <buffer> <leader>/ I//<space><esc>
 setlocal foldmethod=syntax
-setlocal foldlevel=3
+setlocal foldlevel=5
 
 " Snippets {{{
 nnoremap <leader>cl oconsole.log()<esc>i
