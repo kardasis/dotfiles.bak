@@ -159,8 +159,8 @@ hi! link Question SublimeYellow
 call s:h('Search',       { 'format': 'reverse,underline'                                   })
 hi! link SignColumn SublimeLightBlack
 hi! link SpecialKey SublimeLightBlack2
-call s:h('StatusLine',   { 'fg': s:white,       'bg': s:warmgrey                           })
-call s:h('StatusLineNC', { 'fg': s:black,       'bg': s:warmgrey                           })
+call s:h('StatusLine',   { 'fg': s:black,       'bg': s:pink                               })
+call s:h('StatusLineNC', { 'fg': s:white,       'bg': s:warmgrey                           })
 call s:h('TabLine',      { 'fg': s:white,       'bg': s:darkgrey                           })
 call s:h('TabLineFill',  { 'fg': s:grey,        'bg': s:darkgrey                           })
 call s:h('TabLineSel',   { 'fg': s:brightwhite, 'bg': s:white                              })

@@ -59,12 +59,13 @@ endfunction
 
 " Linting {{{
 let g:ale_linters = {
-\   'javascript': ['standard'],
+\   'javascript': ['eslint'],
 \   'typescript': ['eslint', 'prettier'],
 \   'python': ['flake8'],
 \}
-let g:ale_fixers = {'javascript': ['standard']}
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_fixers = {'javascript': ['eslint'], 'vue': ['eslint']}
+let g:ale_lint_on_text_changed = 'normal'
+let g:ale_fix_on_save = 1
 let g:ale_javascript_standard_use_global=0
 
 nnoremap <leader>ll :ALELint<cr>
@@ -127,9 +128,12 @@ nnoremap H 0
 nnoremap L $
 nnoremap J <PageDown>
 nnoremap K <PageUp>
-nnoremap <leader>co :copen<cr>
+
+" quickfix
+nnoremap <leader>co :vert copen<cr> :vertical resize 80<cr>
 nnoremap <leader>cj :cnext<cr>
 nnoremap <leader>ck :cprevious<cr>
+
 nnoremap <leader>H K
 
 onoremap H 0
@@ -245,7 +249,7 @@ augroup END
 
 " Search {{{
 nnoremap / /\v
-nnoremap <leader>sg :Ggrep<space>
+nnoremap <leader>sg :Ggrep<space> 
 nnoremap <leader>ss :Ggrep '<cword>' <cr>
 " }}}
 
