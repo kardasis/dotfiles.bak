@@ -38,6 +38,7 @@ Plugin 'tomlion/vim-solidity'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'hdima/python-syntax'
 Plugin 'posva/vim-vue'
+Plugin 'cakebaker/scss-syntax.vim'
 
 call vundle#end()            " required
 
@@ -68,7 +69,7 @@ let g:ale_lint_on_text_changed = 'normal'
 let g:ale_fix_on_save = 1
 let g:ale_javascript_standard_use_global=0
 
-nnoremap <leader>ll :ALELint<cr>
+nnoremap <leader>al :ALELint<cr>
 " }}}
 
 " Key Mapping Setup {{{
@@ -131,6 +132,9 @@ nnoremap K <PageUp>
 
 " quickfix
 nnoremap <leader>co :vert copen<cr> :vertical resize 80<cr>
+nnoremap <leader>cc :cclose<cr>
+nnoremap <leader>cf :cfirst<cr>
+nnoremap <leader>cl :clast<cr>
 nnoremap <leader>cj :cnext<cr>
 nnoremap <leader>ck :cprevious<cr>
 
@@ -248,8 +252,8 @@ augroup END
  " }}}
 
 " Search {{{
-nnoremap / /\v
-nnoremap <leader>sg :Ggrep<space> 
+nnoremap / /\v\c
+nnoremap <leader>sg :Ggrep<space>
 nnoremap <leader>ss :Ggrep '<cword>' <cr>
 " }}}
 
@@ -289,6 +293,11 @@ xnoremap <leader>c "+y
 nnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>v "+p
+" }}}
+
+" Performance {{{
+" diable preprocessor checking.  hopefullly speeds up vim-vue
+let g:vue_disable_pre_processors=1
 " }}}
 
 " show info for the highligh group under the cursor
