@@ -1,7 +1,6 @@
 autocmd FileType vue syntax sync fromstart 
 
 nnoremap <leader>ssf :syntax sync fromstart<cr>
-nnoremap <leader>cL :execute "normal! othis.log({ " . expand('<cword>') . " })"<cr>
 
 setlocal foldmethod=syntax
 setlocal foldlevel=8
