@@ -28,6 +28,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'vim-scripts/ScrollColors'
 Plugin 'junegunn/goyo.vim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'ervandew/supertab'
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
@@ -223,7 +226,7 @@ function! InsertTabWrapper()
         return "\<c-p>"
     endif
 endfunction
-inoremap <expr> <tab> InsertTabWrapper()
+" inoremap <expr> <tab> InsertTabWrapper()
 inoremap <s-tab> <c-n>
 " }}}
 
@@ -254,6 +257,11 @@ augroup CursorLineOnlyInActiveWindow
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
+
+" show info for the highligh group under the cursor
+map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
  " }}}
 
 " Search {{{
@@ -305,7 +313,22 @@ nnoremap <leader>v "+p
 let g:vue_disable_pre_processors=1
 " }}}
 
-" show info for the highligh group under the cursor
-map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+" Snippets {{{
+nnoremap <leader>es :UltiSnipsEdit<cr> 
+let g:UltiSnipsExpandTrigger="<tab>"
+
+" for tabbing around in a snippet:
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+"supertab (used to help with UltiSnip)
+let g:SuperTabDefaultCompletionType = '<C-p>'
+
+"this is a workaround for a bug that puts the snippet in the wrong place
+let g:UltiSnipsSnippetDirectories = ['/Users/arikardasis/.vim/UltiSnips', 'UltiSnips']
+
+" }}}
+

@@ -1,0 +1,35 @@
+snippet vv "fleshed out vue template"
+<template>
+  <div>
+
+  </div>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import {  } from '@/mixins'
+
+export default{
+  name: $1,
+  props: [],
+  components: {},
+  mixins: [],
+  data () {
+    return {
+    }
+  },
+  computed: {
+  ...mapGetters([$2]),
+  },
+  methods :{
+  },
+  mounted: {
+  }
+}
+</script>
+
+<style scoped>
+
+</style>
+
+endsnippet

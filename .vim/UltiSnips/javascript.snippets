@@ -1,0 +1,39 @@
+snippet vstories "Generate a scaffold for vue storybook stories" b
+import { storiesOf } from '@storybook/vue'
+import ${1/.*\/(\w+)(\.vue)?/$1/}  from '$1'
+import Vue from 'vue'
+
+import { withKnobs, text, boolean } from '@storybook/addon-knobs'
+
+storiesOf('${1/.*\/(\w+)(\.vue)?/$1/}', module)
+  .addDecorator(withKnobs)
+  .add('as a component', () => ({
+    components: { ${1/.*\/(\w+)(\.vue)?/$1/} },
+    props: {
+      show: {
+        default: boolean('show?', true)
+      },
+    },
+    template: '<${1/.*\/(\w+)(\.vue)?/$1/} />'
+  }))
+endsnippet
+
+
+snippet vjest "Outline of a test test for a vue component" b
+
+import { mount } from '@vue/test-utils'
+import ${1/.*\/(\w+)(\.vue)?/$1/}  from '$1'
+
+describe('${1/.*\/(\w+)(\.vue)?/$1/}', () => {
+  let wrapper
+
+  beforeAll( () => {
+     wrapper =  mount(${1/.*\/(\w+)(\.vue)?/$1/})
+  })
+
+  it('', () => {
+  })
+})
+
+endsnippet
+  
