@@ -28,7 +28,10 @@ describe('${1/.*\/(\w+)(\.vue)?/$1/}', () => {
   let wrapper
 
   beforeAll( () => {
-     wrapper =  mount(${1/.*\/(\w+)(\.vue)?/$1/})
+     wrapper =  mount(${1/.*\/(\w+)(\.vue)?/$1/}, {
+     propsData: {
+     }
+   })
   })
 
   it('', () => {

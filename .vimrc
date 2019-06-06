@@ -3,7 +3,6 @@
 
 set nocompatible
 
-
 " PLUGINGS {{{
 filetype off                  " required
 
@@ -60,6 +59,7 @@ function! IsGitDir()
   return empty(isnotgitdir)
 endfunction
 " }}}
+
 
 " Linting {{{
 let g:ale_linters = {
@@ -138,6 +138,11 @@ nnoremap L $
 nnoremap J <PageDown>
 nnoremap K <PageUp>
 
+onoremap H 0
+onoremap L $
+onoremap J <PageDown>
+onoremap K <PageUp>
+
 " quickfix
 nnoremap <leader>co :vert copen<cr> :vertical resize 80<cr>
 nnoremap <leader>cc :cclose<cr>
@@ -146,12 +151,8 @@ nnoremap <leader>cl :clast<cr>
 nnoremap <leader>cj :cnext<cr>
 nnoremap <leader>ck :cprevious<cr>
 
+" help under cursor
 nnoremap <leader>H K
-
-onoremap H 0
-onoremap L $
-onoremap J <PageDown>
-onoremap K <PageUp>
 
 cnoremap jk <C-c> 
 inoremap jk <esc>
@@ -159,6 +160,10 @@ inoremap jk <esc>
 " copy the current file path and line number into the 'l' register
 nnoremap <leader>yy :let@l=join([expand('%'),  line(".")], ':')<cr>
 
+" remove next linebreak and surroounding whitespace
+nnoremap <leader>aj $ma:s/\s*\n\s*//<cr>:noh<cr>`a
+" remove previous linebreak and surroounding whitespace
+nnoremap <leader>ak k$ma:s/\s*\n\s*//<cr>:noh<cr>`a
 " adjust the behavior of backspace key in insert mode
 set backspace=2
 " }}}
@@ -282,6 +287,7 @@ nnoremap <leader>ez :vsplit ~/.zshrc<cr>
 " open my personal vim todo list 
 nnoremap <leader>ea :vsplit ~/vim.annoyance<cr>
 nnoremap <leader>en :vsplit notes.ariignore<cr>
+nnoremap <leader>ed :vsplit .env<cr>
 " fzf file searches
 nnoremap <leader>eg :GFiles<cr>
 nnoremap <leader>et :NERDTree<cr>
@@ -314,7 +320,10 @@ let g:vue_disable_pre_processors=1
 " }}}
 
 " Snippets {{{
+
+" open snippet file for current filetype
 nnoremap <leader>es :UltiSnipsEdit<cr> 
+
 let g:UltiSnipsExpandTrigger="<tab>"
 
 " for tabbing around in a snippet:
@@ -329,6 +338,7 @@ let g:SuperTabDefaultCompletionType = '<C-p>'
 
 "this is a workaround for a bug that puts the snippet in the wrong place
 let g:UltiSnipsSnippetDirectories = ['/Users/arikardasis/.vim/UltiSnips', 'UltiSnips']
+
 
 " }}}
 
