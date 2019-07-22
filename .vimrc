@@ -30,6 +30,8 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
+Plugin 'kien/ctrlp.vim'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
@@ -41,13 +43,17 @@ Plugin 'tmhedberg/SimpylFold'
 Plugin 'hdima/python-syntax'
 Plugin 'posva/vim-vue'
 Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'Valloric/MatchTagAlways'
 
 call vundle#end()            " required
 
 " for vim-markdown-preview
 let g:vim_markdown_preview_github=1
 let g:vim_markdown_preview_browser = 'Google Chrome'
+let vim_markdown_preview_hotkey='<C-m>'
 
+" for MatchTagAlways
+let g:mta_filetypes.vue = 1
 filetype plugin indent on    " required
 " }}}
 
@@ -342,3 +348,11 @@ let g:UltiSnipsSnippetDirectories = ['/Users/arikardasis/.vim/UltiSnips', 'UltiS
 
 " }}}
 
+" CTAGS {{{
+nnoremap <c-]> :CtrlPtjump<cr>
+vnoremap <c-]> :CtrlPtjumpVisual<cr>
+
+    
+let g:ctrlp_tjump_shortener = ['/home/.*/gems/', '.../']
+let g:ctrlp_tjump_only_silent = 1
+" }}}
