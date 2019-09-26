@@ -1,5 +1,6 @@
 source ~/dev-tools/git-prompt.sh
 source ~/dev-tools/git-completion.bash
+
 # prompt
 export PS1="\[\e[0;37m\]\n\t  \u@\h    \[\e[1;36m\] \w    \$(__git_ps1)  \[\e[1;92m\]  \n\$ \[\e[0m\] "
 export CLICOLOR=1

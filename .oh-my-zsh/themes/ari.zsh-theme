@@ -87,6 +87,7 @@ prompt_end() {
 # Each component will draw itself, and hide itself if no information needs to be shown
 
 # Context: user@hostname (who am I and where am I)
+DEFAULT_USER="arikardasis"
 prompt_context() {
   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
     prompt_segment black 102 "%(!.%{%F{yellow}%}.)%n@%m"

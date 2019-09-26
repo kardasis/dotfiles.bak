@@ -44,6 +44,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'posva/vim-vue'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()            " required
 
@@ -52,8 +53,6 @@ let g:vim_markdown_preview_github=1
 let g:vim_markdown_preview_browser = 'Google Chrome'
 let vim_markdown_preview_hotkey='<C-m>'
 
-" for MatchTagAlways
-let g:mta_filetypes.vue = 1
 filetype plugin indent on    " required
 " }}}
 
@@ -295,7 +294,7 @@ nnoremap <leader>ea :vsplit ~/vim.annoyance<cr>
 nnoremap <leader>en :vsplit notes.ariignore<cr>
 nnoremap <leader>ed :vsplit .env<cr>
 " fzf file searches
-nnoremap <leader>eg :GFiles<cr>
+nnoremap <leader>eg :GFiles --exclude-standard --cached --others<cr>
 nnoremap <leader>et :NERDTree<cr>
 " }}}
 
