@@ -104,8 +104,7 @@ set wiw=115
 set hlsearch
 set incsearch
 syntax on
-
-colorscheme ari-colorscheme
+colorscheme brisket
 
 set guioptions-=r
 set guioptions-=l
@@ -296,6 +295,9 @@ nnoremap <leader>ed :vsplit .env<cr>
 " fzf file searches
 nnoremap <leader>eg :GFiles --exclude-standard --cached --others<cr>
 nnoremap <leader>et :NERDTree<cr>
+" open current colorscheme file
+" assumes colorscheme is in a nicely named file
+nnoremap <leader>ec :execute "vsplit ~/.vim/colors/".g:colors_name.".vim"<cr>
 " }}}
 
 " Git {{{

@@ -1,23 +1,18 @@
-" File:       monokai.vim
-" Maintainer: Erich Gubler (erichdongubler)
-" URL:        https://github.com/erichdongubler/vim-sublime-monokai
-" License:    MIT
-
-" Initialisation
+" File:       brisket.vim
 
 if !has('gui_running') && &t_Co < 256
   finish
 endif
 
-if !exists('g:sublimemonokai_gui_italic')
-    let g:sublimemonokai_gui_italic = 1
+if !exists('g:brisket_gui_italic')
+    let g:brisket_gui_italic = 1
 endif
 
-if !exists('g:sublimemonokai_term_italic')
-    let g:sublimemonokai_term_italic = 0
+if !exists('g:brisket_term_italic')
+    let g:brisket_term_italic = 0
 endif
 
-let g:sublimemonokai_termcolors = 256 " does not support 16 color term right now.
+let g:brisket_termcolors = 256 " does not support 16 color term right now.
 
 set background=dark
 hi clear
@@ -26,7 +21,7 @@ if exists('syntax_on')
   syntax reset
 endif
 
-let colors_name = 'sublimemonokai'
+let colors_name = 'brisket'
 
 fun! s:h(group, style)
   let s:ctermformat = 'NONE'
@@ -35,17 +30,17 @@ fun! s:h(group, style)
     let s:ctermformat = a:style.format
     let s:guiformat = a:style.format
   endif
-  if g:sublimemonokai_term_italic == 0
+  if g:brisket_term_italic == 0
     let s:ctermformat = substitute(s:ctermformat, ',italic', '', '')
     let s:ctermformat = substitute(s:ctermformat, 'italic,', '', '')
     let s:ctermformat = substitute(s:ctermformat, 'italic', '', '')
   endif
-  if g:sublimemonokai_gui_italic == 0
+  if g:brisket_gui_italic == 0
     let s:guiformat = substitute(s:guiformat, ',italic', '', '')
     let s:guiformat = substitute(s:guiformat, 'italic,', '', '')
     let s:guiformat = substitute(s:guiformat, 'italic', '', '')
   endif
-  if g:sublimemonokai_termcolors == 16
+  if g:brisket_termcolors == 16
     let l:ctermfg = (has_key(a:style, 'fg') ? a:style.fg.cterm16 : 'NONE')
     let l:ctermbg = (has_key(a:style, 'bg') ? a:style.bg.cterm16 : 'NONE')
   else
@@ -73,7 +68,7 @@ endfun
 " namespaced global variable
 fun! s:create_palette_color(color_name, color_data)
 	exec 'let s:' . a:color_name . ' = a:color_data'
-	exec 'let g:sublimemonokai_' . a:color_name . ' = a:color_data'
+	exec 'let g:brisket_' . a:color_name . ' = a:color_data'
 endf
 
 call s:create_palette_color('brightwhite', { 'gui': '#FFFFFF', 'cterm': '231' })
