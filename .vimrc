@@ -14,8 +14,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'w0rp/ale'
-Plugin 'pedrohdz/vim-yaml-folds'
-Plugin 'plytophogy/vim-diffchanges'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
@@ -30,20 +28,16 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
-Plugin 'kien/ctrlp.vim'
-Plugin 'ivalkeen/vim-ctrlp-tjump'
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'tpope/vim-markdown'
 Plugin 'pangloss/vim-javascript'
-Plugin 'HerringtonDarkholme/yats.vim'   " typescript
-Plugin 'tomlion/vim-solidity'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'hdima/python-syntax'
 Plugin 'posva/vim-vue'
 Plugin 'cakebaker/scss-syntax.vim'
-Plugin 'Valloric/MatchTagAlways'
+Plugin 'gregsexton/MatchTag'
 Plugin 'vim-ruby/vim-ruby'
 
 call vundle#end()            " required
@@ -165,9 +159,9 @@ inoremap jk <esc>
 nnoremap <leader>yy :let@l=join([expand('%'),  line(".")], ':')<cr>
 
 " remove next linebreak and surroounding whitespace
-nnoremap <leader>aj $ma:s/\s*\n\s*//<cr>:noh<cr>`a
+nnoremap <leader>aj $ma:s/\s*\n\s*/ /<cr>:noh<cr>`a
 " remove previous linebreak and surroounding whitespace
-nnoremap <leader>ak k$ma:s/\s*\n\s*//<cr>:noh<cr>`a
+nnoremap <leader>ak k$ma:s/\s*\n\s*/ /<cr>:noh<cr>`a
 " adjust the behavior of backspace key in insert mode
 set backspace=2
 " }}}
@@ -348,12 +342,9 @@ let g:UltiSnipsSnippetDirectories = ['/Users/arikardasis/.vim/UltiSnips', 'UltiS
 
 
 " }}}
-
-" CTAGS {{{
-nnoremap <c-]> :CtrlPtjump<cr>
-vnoremap <c-]> :CtrlPtjumpVisual<cr>
-
     
 let g:ctrlp_tjump_shortener = ['/home/.*/gems/', '.../']
 let g:ctrlp_tjump_only_silent = 1
 " }}}
+"
+set iskeyword+=-
