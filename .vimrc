@@ -60,18 +60,20 @@ function! IsGitDir()
 endfunction
 " }}}
 
-
 " Linting {{{
 let g:ale_linters = {
 \   'javascript': ['eslint'],
 \   'typescript': ['eslint', 'prettier'],
-\   'python': ['flake8'],
+\   'sql': ['sqlint'],
+\   'python': ['pep8'],
 \   'ruby': ['rubocop'],
 \}
 let g:ale_fixers = {
 \  'javascript': ['eslint'],
+\  'python': ['autopep8'],
 \  'vue': ['eslint'],
 \  'ruby': ['rubocop'],
+\   'sql': ['sqlfmt'],
 \}
 let g:ale_lint_on_text_changed = 'normal'
 let g:ale_fix_on_save = 1
