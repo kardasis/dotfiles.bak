@@ -28,6 +28,7 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-dadbod'
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
