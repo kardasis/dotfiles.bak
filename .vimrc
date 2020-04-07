@@ -288,6 +288,7 @@ nnoremap <leader>ez :vsplit ~/.zshrc<cr>
 " open my personal vim todo list 
 nnoremap <leader>ea :vsplit ~/vim.annoyance<cr>
 nnoremap <leader>en :vsplit notes.ariignore<cr>
+nnoremap <leader>edb :vsplit scratch.SQL<cr>
 nnoremap <leader>ed :vsplit .env<cr>
 " fzf file searches
 nnoremap <leader>eg :GFiles --exclude-standard --cached --others<cr>
