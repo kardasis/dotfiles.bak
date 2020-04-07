@@ -14,4 +14,5 @@ nnoremap <leader>ld othis.debug()<esc>i
 nnoremap <leader>lL :execute "normal! othis.log({ " . expand('<cword>') . " })"<cr>
 nnoremap <leader>lE :execute "normal! othis.logError({ " . expand('<cword>') . " })"<cr>
 nnoremap <leader>lD :execute "normal! othis.debug({ " . expand('<cword>') . " })"<cr>
+nnoremap <leader>lq :execute "normal! othis.debug(' " . expand('<cword>') . " ')"<cr>
 " }}}
