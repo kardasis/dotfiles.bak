@@ -1,4 +1,3 @@
-" Author : Ari Kardasis
 " ari.kardasis@gmail.com
 
 set nocompatible

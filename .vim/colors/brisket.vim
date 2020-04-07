@@ -1,5 +1,3 @@
-" File:       brisket.vim
-
 if !has('gui_running') && &t_Co < 256
   finish
 endif
@@ -763,3 +761,4 @@ hi! link zshTypes    Keyword
 " * Semicolons in `if` blocks are `Keyword`ed in Sublime but not distinct in
 "     Vim
 " * Commands aren't distinct from builtins and keywords in Vim
+highlight Normal ctermbg=234
