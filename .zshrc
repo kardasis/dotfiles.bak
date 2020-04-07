@@ -90,9 +90,6 @@ fi
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-alias kc="cd $HOME/cottageclass/kidsclub"
-#
-#
 #
 export CLICOLOR=1
 export LSCOLORS=Cxfxcxdxbxegedabagacad
@@ -203,7 +200,33 @@ alias sb='source ~/.bash_profile'
 alias dcodb='dco down && dco build'
 alias rm=trash
 alias hm='hivemind -p 3000 Procfile.dev'
+alias cdkk='cd ~/cottageClass/kidsclub'
+alias cdt='cd ~/trading'
+alias pes='pipenv shell'
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+eval "$(pyenv init -)"
+export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
+
+# Created by `userpath` on 2019-12-14 04:01:21
+export PATH="$PATH:/Users/arikardasis/.local/bin"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/Users/arikardasis/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/Users/arikardasis/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/Users/arikardasis/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/Users/arikardasis/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
