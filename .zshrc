@@ -62,7 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
-  git brew sudo zsh-syntax-highlighting rails
+  git brew sudo zsh-syntax-highlighting rails python
 )
 
 source $ZSH/oh-my-zsh.sh
