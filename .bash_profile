@@ -10,7 +10,6 @@ HISTFILESIZE=1000000000 HISTSIZE=1000000
 
 # Setting PATH for Python 2.7
 PATH="~/.local/bin":$PATH
-export PATH=/usr/local/bin:$PATH
 
 ## Postgres data directory
 export PGDATA=/usr/local/var/postgres
@@ -68,37 +67,7 @@ alias gsur='/usr/bin/git submodule update --recursive'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
 alias sb='source ~/.bash_profile'
 alias dcodb='dco down && dco build'
-# added by Anaconda3 5.3.1 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
+
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-# added by Anaconda3 2019.10 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/arikardasis/opt/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/Users/arikardasis/opt/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/arikardasis/opt/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/Users/arikardasis/opt/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
+export PATH=/usr/local/bin:$PATH
