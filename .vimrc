@@ -16,18 +16,21 @@ Plugin 'w0rp/ale'
 Plugin 'junegunn/fzf.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
-Plugin 'henrik/vim-indexed-search'
-Plugin 'vim-syntastic/syntastic'
+Plugin 'ycm-core/YouCompleteMe'
+" Plugin 'henrik/vim-indexed-search'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-commentary'
-Plugin 'junegunn/vim-easy-align'
+" Plugin 'junegunn/vim-easy-align'
 Plugin 'tpope/vim-repeat'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'vim-scripts/ScrollColors'
-Plugin 'junegunn/goyo.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'ervandew/supertab'
+" Plugin 'junegunn/goyo.vim'
+" Plugin 'SirVer/ultisnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-dadbod'
+" Plugin 'neoclide/coc.nvim'
+
 
 " filetype stuff
 Plugin 'JamshedVesuna/vim-markdown-preview'
@@ -345,9 +348,5 @@ let g:UltiSnipsSnippetDirectories = ['/Users/arikardasis/.vim/UltiSnips', 'UltiS
 
 
 " }}}
-    
-let g:ctrlp_tjump_shortener = ['/home/.*/gems/', '.../']
-let g:ctrlp_tjump_only_silent = 1
-" }}}
-"
+
 set iskeyword+=-
