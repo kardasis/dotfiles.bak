@@ -25,9 +25,9 @@ Plugin 'tpope/vim-repeat'
 Plugin 'rafi/awesome-vim-colorschemes'
 Plugin 'vim-scripts/ScrollColors'
 " Plugin 'junegunn/goyo.vim'
-" Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
-" Plugin 'ervandew/supertab'
+Plugin 'ervandew/supertab'
 Plugin 'tpope/vim-dadbod'
 " Plugin 'neoclide/coc.nvim'
 
@@ -215,14 +215,6 @@ nnoremap <leader>jq :%!jq '.'<cr>
 vnoremap <leader>jq :!jq '.'<cr>
 " }}}
 
-" Easy Align {{{
-" Start interactive EasyAlign in visual mode 
-xnoremap <leader>a :EasyAlign<cr>
-
-" Start interactive EasyAlign for a motion/text object
-nnoremap <leader>a :EasyAlign<cr>
-" }}}
-
 " Tab completion {{{
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
@@ -340,13 +332,19 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
 
-"supertab (used to help with UltiSnip)
-let g:SuperTabDefaultCompletionType = '<C-p>'
-
 "this is a workaround for a bug that puts the snippet in the wrong place
 let g:UltiSnipsSnippetDirectories = ['/Users/arikardasis/.vim/UltiSnips', 'UltiSnips']
-
-
 " }}}
+
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 set iskeyword+=-
