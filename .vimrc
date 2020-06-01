@@ -245,6 +245,12 @@ endfunction
 noremap <leader>r :call RunFileInCurrentBuffer()<cr><cr>
 " }}}
 
+" Cursor style {{{
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+" }}}
+
 " Highlighting {{{
 " show errors
 highlight Errors ctermbg=green guibg=darkred
@@ -254,11 +260,12 @@ nnoremap <leader>hE :match none<cr>
 " set current line highlight in active window
 augroup CursorLineOnlyInActiveWindow
   autocmd!
+  autocmd InsertEnter,InsertLeave * set cul!
   autocmd VimEnter,WinEnter,BufWinEnter * setlocal cursorline
   autocmd WinLeave * setlocal nocursorline
 augroup END
 
-" show info for the highligh group under the cursor
+" show info for the highlight group under the cursor
 map <leader>hi :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
 \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
@@ -311,6 +318,8 @@ xnoremap <leader>c "+y
 nnoremap <leader>c "+y
 " paste from system clipboard
 nnoremap <leader>v "+p
+" shut off bracketed paste for system clipboard
+set t_BE=
 " }}}
 
 " Performance {{{
