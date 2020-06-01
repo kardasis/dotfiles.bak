@@ -62,7 +62,7 @@ COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
 
 plugins=(
-  git brew sudo zsh-syntax-highlighting rails python
+  git brew sudo zsh-syntax-highlighting rails python zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -223,3 +223,4 @@ cdpath=($HOME/repos $HOME/repos/kardasis)
 
 export PATH="$PATH:/usr/local/go/bin"
 export PATH=/usr/local/bin:$PATH
+export TERM=xterm-256color
