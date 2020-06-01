@@ -1,8 +1,5 @@
-# If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # ZSH settings 
-export ZSH="/Users/arikardasis/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="ari"
 COMPLETION_WAITING_DOTS="true"
 HIST_STAMPS="mm/dd/yyyy"
@@ -19,8 +16,6 @@ source $ZSH/oh-my-zsh.sh
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-export PATH="$PATH:/usr/local/go/bin"
-export PATH=/usr/local/bin:$PATH
 
 # color settings
 export CLICOLOR=1
@@ -85,10 +80,6 @@ __git_files () {
     _wanted files expl 'local files' _files     
 }
 
-# map option left/right arrow on mac keybard to move around by words
-bindkey "^[^[[D" backward-word
-bindkey "^[^[[C" forward-word
-
 # vi bindings
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -141,10 +132,12 @@ alias cdkk='cd ~/cottageClass/kidsclub'
 alias cdt='cd ~/trading'
 alias pes='pipenv shell'
 alias path='tr ":" "\n" <<< "$PATH"'
+
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="$PATH:/usr/local/go/bin"
 
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
