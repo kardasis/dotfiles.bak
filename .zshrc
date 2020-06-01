@@ -16,22 +16,17 @@ source $ZSH/oh-my-zsh.sh
 # RVM
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='gvim'
-fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
 # ssh
 export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-#
+export PATH="$PATH:/usr/local/go/bin"
+export PATH=/usr/local/bin:$PATH
+
+# color settings
 export CLICOLOR=1
 export LSCOLORS=Cxfxcxdxbxegedabagacad
+
+# very large history
 HISTFILESIZE=1000000000 HISTSIZE=1000000
 
 gogit()
@@ -54,10 +49,13 @@ if [ ! -d .git ]; then
 fi;
 }
 
+# tab completion
+if command -v brew && [ -f $(brew --prefix)/etc/bash_completion ]; then
+. $(brew --prefix)/etc/bash_completion
+fi
+
 # nvm
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+source $(brew --prefix nvm)/nvm.sh
 
 # run 'nvm use' whenever entering a directory with an nvmrc 
 load-nvmrc() {
@@ -135,7 +133,6 @@ alias gitdelmerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs gi
 alias dco='docker-compose'
 alias gsur='/usr/bin/git submodule update --recursive'
 alias gvim='/Applications/MacVim.app/Contents/MacOS/Vim -g'
-alias sb='source ~/.bash_profile'
 alias sz='source ~/.zshrc'
 alias dcodb='dco down && dco build'
 alias rm=trash
@@ -149,7 +146,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
-eval "$(pyenv init -)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
 export SDKROOT=/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk
 
 
@@ -160,6 +159,6 @@ setopt auto_cd
 cdpath=($HOME/repos $HOME/repos/kardasis)
 
 
-export PATH="$PATH:/usr/local/go/bin"
-export PATH=/usr/local/bin:$PATH
+export EDITOR='vim'
 export TERM=xterm-256color
+export PGDATA=/usr/local/var/postgres
