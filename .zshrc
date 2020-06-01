@@ -204,7 +204,7 @@ alias hm='hivemind -p 3000 Procfile.dev'
 alias cdkk='cd ~/cottageClass/kidsclub'
 alias cdt='cd ~/trading'
 alias pes='pipenv shell'
-
+alias path='tr ":" "\n" <<< "$PATH"'
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
 
